@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect width="100" height="100" rx="25" fill="#0a0a0c" />
+    <defs>
+        <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#00d2ff" />
+        </linearGradient>
+    </defs>
+    <text x="50" y="74" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="72" fill="url(#glowGrad)" text-anchor="middle">E</text>
+</svg>
