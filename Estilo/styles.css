@@ -789,3 +789,70 @@ body.chalkboard {
     margin: 2rem 0;
     opacity: 0.7;
 }
+
+/* =========================================
+   POST-IT STYLES
+   ========================================= */
+.post-it-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding: 2rem 0;
+}
+
+.post-it {
+    background: #fdfd96; /* Amarillo pastel */
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 3px 5px 10px rgba(0,0,0,0.5);
+    font-family: 'Caveat', cursive;
+    color: #1a1a1a;
+    position: relative;
+    transform: rotate(-3deg);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    border-bottom-right-radius: 20px 5px; /* Efecto doblez */
+}
+
+.post-it:nth-child(even) {
+    transform: rotate(4deg);
+    background: #ffb7b2; /* Rojo pastel */
+}
+
+.post-it:nth-child(3n) {
+    transform: rotate(-2deg);
+    background: #e2f0cb; /* Verde pastel */
+}
+
+.post-it:nth-child(4n) {
+    transform: rotate(1deg);
+    background: #b5ead7; /* Menta pastel */
+}
+
+.post-it:hover {
+    transform: scale(1.15) rotate(0deg);
+    z-index: 10;
+    box-shadow: 8px 12px 20px rgba(0,0,0,0.6);
+}
+
+.post-it img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 0.8rem;
+    filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.3));
+}
+
+.post-it p {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #333;
+}
+
