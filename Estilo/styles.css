@@ -681,6 +681,7 @@ body.chalkboard {
     width: 100%;
     height: 45vh;
     object-fit: cover;
+    object-position: top; /* Ajuste para mostrar la parte superior del edificio */
     border-bottom: 5px solid #e0e0e0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     display: block;
@@ -746,9 +747,40 @@ body.chalkboard {
 }
 
 .subjects-table td {
+    color: #f0f4f8;
+    vertical-align: top; /* Alinea los cursos arriba de la lista */
+}
+
+/* Modificamos la primera columna para mantener estilo antiguo de tiza */
+.subjects-table td:first-child {
     font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #ececec;
+}
+
+.subjects-list {
+    column-count: 3;
+    column-gap: 2rem;
+    list-style-type: none; /* Quitamos viñeta default para estilarla */
+    padding-left: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Tipografía más legible */
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.subjects-list li {
+    break-inside: avoid-column; /* Evita que el elemento se corte a la mitad */
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.subjects-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .subjects-table tr:hover {
