@@ -590,9 +590,16 @@ ul {
     font-size: 0.75rem;
     padding: 0.3rem 0.8rem;
     background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border);
     border-radius: 30px;
     color: var(--color-text-muted);
+    transition: all var(--transition-fast);
 }
+
+:root.light-mode .project-tags span {
+    background: rgba(0, 0, 0, 0.02);
+}
+
 
 .project-link {
     display: inline-flex;
@@ -648,6 +655,7 @@ footer {
     padding: 3rem 0;
     text-align: center;
     margin-top: 4rem;
+    font-family: var(--font-sans);
 }
 
 .footer-container p {
