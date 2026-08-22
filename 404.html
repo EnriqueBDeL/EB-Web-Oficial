@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada - 404 | EnriqueBDL</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        (function() {
+            var path = window.location.pathname;
+            var base = '/';
+            if (path.includes('/EB-Web-Oficial/')) {
+                base = '/EB-Web-Oficial/';
+            }
+            
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = base + 'Estilo/styles.css';
+            document.head.appendChild(link);
+            
+            var link404 = document.createElement('link');
+            link404.rel = 'stylesheet';
+            link404.href = base + 'Estilo/404.css';
+            document.head.appendChild(link404);
+            
+            var script = document.createElement('script');
+            script.src = base + 'Scripts/main.js';
+            script.defer = true;
+            document.head.appendChild(script);
+            
+            var script404 = document.createElement('script');
+            script404.src = base + 'Scripts/404.js';
+            script404.defer = true;
+            document.head.appendChild(script404);
+
+            var favicon = document.createElement('link');
+            favicon.rel = 'icon';
+            favicon.type = 'image/svg+xml';
+            favicon.href = base + 'Media/favicon.svg';
+            document.head.appendChild(favicon);
+        })();
+    </script>
+
+
+</head>
+<body class="error-page-body">
+
+    <button id="theme-toggle" class="theme-toggle-btn floating-toggle" aria-label="Cambiar tema">
+        <i class="ph ph-moon"></i>
+    </button>
+
+    <main class="content-wrap">
+        <h1 class="error-code">404</h1>
+        <a id="home-link" href="#" class="home-btn">
+            <i class="ph ph-house"></i> Volver al Inicio
+        </a>
+    </main>
+
+    <canvas id="wave-canvas"></canvas>
+
+    <script>
+        (function() {
+            var path = window.location.pathname;
+            var base = '/';
+            if (path.includes('/EB-Web-Oficial/')) {
+                base = '/EB-Web-Oficial/';
+            }
+            document.getElementById('home-link').href = base + 'Estructura/inicio.html';
+        })();
+    </script>
+
+
+</body>
+</html>
