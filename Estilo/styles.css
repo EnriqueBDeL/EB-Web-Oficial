@@ -1259,3 +1259,112 @@ body.chalkboard {
     cursor: pointer;
 }
 
+/* =========================================
+   INFINITE LOGO CAROUSEL
+   ========================================= */
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 2rem 0;
+    margin: 2.5rem 0;
+    background: rgba(0, 0, 0, 0.15);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+/* Edge fading overlays */
+.carousel-container::before,
+.carousel-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, #2a3a30, rgba(42, 58, 48, 0));
+}
+
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, #2a3a30, rgba(42, 58, 48, 0));
+}
+
+/* Light mode adjustments */
+:root.light-mode body.chalkboard .carousel-container {
+    background: rgba(0, 0, 0, 0.03);
+    border: 2px dashed rgba(0, 0, 0, 0.15);
+}
+
+:root.light-mode body.chalkboard .carousel-container::before {
+    background: linear-gradient(to right, #f1f5f9, rgba(241, 245, 249, 0));
+}
+
+:root.light-mode body.chalkboard .carousel-container::after {
+    background: linear-gradient(to left, #f1f5f9, rgba(241, 245, 249, 0));
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-carousel 30s linear infinite;
+}
+
+/* Pause on hover */
+.carousel-container:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+.carousel-slide {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.carousel-slide .brand-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-fast, 0.2s ease);
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.carousel-slide .csharp-logo {
+    height: 56px;
+}
+
+.carousel-slide .badge-logo {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-fast, 0.2s ease);
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+:root.light-mode body.chalkboard .carousel-slide .brand-logo,
+:root.light-mode body.chalkboard .carousel-slide .badge-logo {
+    filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.15));
+}
+
+.carousel-slide img:hover {
+    transform: scale(1.15);
+}
+
+@keyframes scroll-carousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
