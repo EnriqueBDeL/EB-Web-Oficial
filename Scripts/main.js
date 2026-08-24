@@ -55,6 +55,7 @@ function applyTheme(theme) {
 }
 
 // Function to update icon in toggle button
+
 function updateToggleIcon(theme) {
     if (!themeToggleBtn) return;
     const icon = themeToggleBtn.querySelector('i');
@@ -67,6 +68,7 @@ function updateToggleIcon(theme) {
     }
 }
 
+
 // Apply theme on load
 const currentTheme = getCurrentTheme();
 applyTheme(currentTheme);
@@ -76,7 +78,7 @@ if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
         const activeTheme = rootElement.classList.contains('light-mode') ? 'light' : 'dark';
         const nextTheme = activeTheme === 'light' ? 'dark' : 'light';
-        
+
         // Save user override
         localStorage.setItem('theme', nextTheme);
         applyTheme(nextTheme);
@@ -89,3 +91,81 @@ window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e
         applyTheme(e.matches ? 'light' : 'dark');
     }
 });
+
+// --- Dyslexia Easter Egg ---
+const easterEggTrigger = document.getElementById('easter-egg-trigger');
+if (easterEggTrigger) {
+    let textNodes = [];
+
+    function getTextNodes(node) {
+        if (node.nodeType === 3) {
+            if (node.nodeValue.trim() !== '') {
+                textNodes.push({
+                    node: node,
+                    originalText: node.nodeValue
+                });
+            }
+        } else {
+            for (let i = 0; i < node.childNodes.length; i++) {
+                getTextNodes(node.childNodes[i]);
+            }
+        }
+    }
+
+    easterEggTrigger.addEventListener('click', () => {
+        if (window.dyslexiaInterval) {
+            // Stop the effect and restore original text
+            clearInterval(window.dyslexiaInterval);
+            window.dyslexiaInterval = null;
+
+            for (let i = 0; i < textNodes.length; i++) {
+                textNodes[i].node.nodeValue = textNodes[i].originalText;
+            }
+            return;
+        }
+
+        // Initialize text nodes if not already done
+        if (textNodes.length === 0) {
+            getTextNodes(document.body);
+        }
+
+        window.dyslexiaInterval = setInterval(() => {
+            for (let i = 0; i < textNodes.length; i++) {
+                if (Math.random() < 0.1) {
+                    let newWords = textNodes[i].originalText.split(' ');
+
+                    for (let j = 0; j < newWords.length; j++) {
+                        if (Math.random() < 0.2 && newWords[j].length > 3) {
+                            let wordArr = newWords[j].split('');
+                            let swapIdx = Math.floor(Math.random() * (wordArr.length - 3)) + 1;
+                            let temp = wordArr[swapIdx];
+                            wordArr[swapIdx] = wordArr[swapIdx + 1];
+                            wordArr[swapIdx + 1] = temp;
+                            newWords[j] = wordArr.join('');
+                        }
+                    }
+                    textNodes[i].node.nodeValue = newWords.join(' ');
+                }
+            }
+        }, 300);
+    });
+}
+
+// --- Jorge Easter Egg ---
+const jorgeEasterEggTrigger = document.getElementById('jorge-easter-egg');
+const jorgeCloud = document.getElementById('jorge-cloud');
+if (jorgeEasterEggTrigger && jorgeCloud) {
+    jorgeEasterEggTrigger.addEventListener('click', () => {
+        jorgeCloud.classList.toggle('visible');
+    });
+}
+
+// --- Gonzalo Easter Egg ---
+const gonzaloEasterEggTrigger = document.getElementById('gonzalo-easter-egg');
+const gonzaloCloud = document.getElementById('gonzalo-cloud');
+if (gonzaloEasterEggTrigger && gonzaloCloud) {
+    gonzaloEasterEggTrigger.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent navigating if wrapped in a link
+        gonzaloCloud.classList.toggle('visible');
+    });
+}
