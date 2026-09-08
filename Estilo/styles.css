@@ -823,6 +823,11 @@ footer {
     margin-bottom: 2.5rem;
 }
 
+.gdg-container {
+    max-width: 800px;
+    margin: 0 auto 5rem;
+}
+
 /* =========================================
    UCAM CHALKBOARD STYLES
    ========================================= */
