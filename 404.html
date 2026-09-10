@@ -6,56 +6,28 @@
     <title>Página no encontrada - 404 | EnriqueBDL</title>
 
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="Media/favicon.ico">
-    <link rel="icon" type="image/png" sizes="48x48" href="Media/favicon-48.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="Media/favicon-96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="Media/favicon-192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="Media/apple-touch-icon.png">
-    <link rel="icon" type="image/svg+xml" href="Media/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="Media/Favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="48x48" href="Media/Favicons/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Media/Favicons/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Media/Favicons/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Media/Favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="Media/Favicons/favicon.svg">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     
+    <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <script>
-        (function() {
-            var path = window.location.pathname;
-            var base = '/';
-            if (path.includes('/EB-Web-Oficial/')) {
-                base = '/EB-Web-Oficial/';
-            }
-            
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = base + 'Estilo/styles.css';
-            document.head.appendChild(link);
-            
-            var link404 = document.createElement('link');
-            link404.rel = 'stylesheet';
-            link404.href = base + 'Estilo/404.css';
-            document.head.appendChild(link404);
-            
-            var script = document.createElement('script');
-            script.src = base + 'Scripts/main.js';
-            script.defer = true;
-            document.head.appendChild(script);
-            
-            var script404 = document.createElement('script');
-            script404.src = base + 'Scripts/404.js';
-            script404.defer = true;
-            document.head.appendChild(script404);
-
-            var favicon = document.createElement('link');
-            favicon.rel = 'icon';
-            favicon.type = 'image/svg+xml';
-            favicon.href = base + 'Media/favicon.svg';
-            document.head.appendChild(favicon);
-        })();
-    </script>
-
-
+    <!-- Estilos Externos -->
+    <link rel="stylesheet" href="Estilo/styles.css">
+    <link rel="stylesheet" href="Estilo/404.css">
+    
+    <!-- Scripts Externos -->
+    <script src="Scripts/main.js" defer></script>
+    <script src="Scripts/404.js" defer></script>
 </head>
 <body class="error-page-body">
 
@@ -65,24 +37,12 @@
 
     <main class="content-wrap">
         <h1 class="error-code">404</h1>
-        <a id="home-link" href="#" class="home-btn">
+        <a id="home-link" href="Estructura/inicio.html" class="home-btn">
             <i class="ph ph-house"></i> Volver al Inicio
         </a>
     </main>
 
     <canvas id="wave-canvas"></canvas>
-
-    <script>
-        (function() {
-            var path = window.location.pathname;
-            var base = '/';
-            if (path.includes('/EB-Web-Oficial/')) {
-                base = '/EB-Web-Oficial/';
-            }
-            document.getElementById('home-link').href = base + 'Estructura/inicio.html';
-        })();
-    </script>
-
 
 </body>
 </html>

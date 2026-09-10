@@ -1,3 +1,18 @@
+/**
+ * Scripts específicos para la página de error 404
+ */
+
+function init404Links() {
+    const homeLink = document.getElementById('home-link');
+    if (!homeLink) return;
+    const path = window.location.pathname;
+    let base = '/';
+    if (path.includes('/EB-Web-Oficial/')) {
+        base = '/EB-Web-Oficial/';
+    }
+    homeLink.href = base + 'Estructura/inicio.html';
+}
+
 function initWave() {
     const canvas = document.getElementById('wave-canvas');
     if (!canvas) return;
@@ -113,7 +128,11 @@ function initWave() {
 }
 
 if (document.readyState === 'loading') {
-    window.addEventListener('DOMContentLoaded', initWave);
+    window.addEventListener('DOMContentLoaded', () => {
+        initWave();
+        init404Links();
+    });
 } else {
     initWave();
+    init404Links();
 }
