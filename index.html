@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="google-site-verification" content="qjMuYyLEPL7rOEUBY7zknfcZMMpp12Btb8fHAVm2Zhs" />    
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="qjMuYyLEPL7rOEUBY7zknfcZMMpp12Btb8fHAVm2Zhs" />    
+    
     <title>EnriqueBDL | Portfolio</title>
     <meta name="description" content="Portfolio de EnriqueBDL, Estudiante de Ingeniería Informática en UCAM.">
     <meta http-equiv="refresh" content="0; url=Estructura/inicio.html">
 
+    <!-- Color de tema del navegador para evitar parpadeos -->
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#0a0a0c">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="Media/Favicons/favicon.ico">
     <link rel="icon" type="image/png" sizes="48x48" href="Media/Favicons/favicon-48.png">
     <link rel="icon" type="image/png" sizes="96x96" href="Media/Favicons/favicon-96.png">
@@ -16,6 +21,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="Media/Favicons/apple-touch-icon.png">
     <link rel="icon" type="image/svg+xml" href="Media/Favicons/favicon.svg">
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="EnriqueBDL">
     <meta property="og:title" content="EnriqueBDL | Portfolio">
@@ -23,6 +29,7 @@
     <meta property="og:url" content="https://enriquebdel.github.io/">
     <meta property="og:image" content="https://enriquebdel.github.io/Media/Favicons/favicon-512.png">
 
+    <!-- Datos estructurados Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -33,9 +40,27 @@
     }
     </script>
 
-    <script src="Scripts/index.js" defer></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Estilos de tema y carga sin parpadeo blanco -->
+    <link rel="stylesheet" href="Estilo/styles.css">
+    <link rel="stylesheet" href="Estilo/index.css">
+
+    <!-- Script de redirección instantánea -->
+    <script src="Scripts/index.js"></script>
 </head>
-<body>
-    <p>Si no eres redireccionado automáticamente, haz clic <a href="Estructura/inicio.html">aquí</a>.</p>
+<body class="redirect-body">
+    <aside class="dynamic-background">
+        <span class="glow glow-1"></span>
+        <span class="glow glow-2"></span>
+    </aside>
+
+    <main class="redirect-container">
+        <h1 class="redirect-logo">EnriqueBDL</h1>
+        <figure class="redirect-spinner" aria-label="Cargando portfolio..."></figure>
+    </main>
 </body>
 </html>
