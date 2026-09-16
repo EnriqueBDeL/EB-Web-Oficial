@@ -1,6 +1,3 @@
-/**
- * Scripts específicos para la página de error 404
- */
 
 function init404Links() {
     const homeLink = document.getElementById('home-link');

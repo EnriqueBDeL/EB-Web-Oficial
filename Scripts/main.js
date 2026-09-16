@@ -1,4 +1,3 @@
-// Intersection Observer for fade-in animations on scroll
 const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -18,7 +17,6 @@ document.querySelectorAll('.fade-in').forEach(section => {
     observer.observe(section);
 });
 
-// Navbar blur on scroll
 const navbar = document.querySelector('.navbar');
 if (navbar) {
     window.addEventListener('scroll', () => {
@@ -30,11 +28,9 @@ if (navbar) {
     });
 }
 
-// Theme toggle and system preference detection logic
 const themeToggleBtn = document.getElementById('theme-toggle');
 const rootElement = document.documentElement;
 
-// Function to get current theme
 function getCurrentTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -43,7 +39,6 @@ function getCurrentTheme() {
     return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
-// Function to apply theme
 function applyTheme(theme) {
     if (theme === 'light') {
         rootElement.classList.add('light-mode');
@@ -53,8 +48,6 @@ function applyTheme(theme) {
         updateToggleIcon('dark');
     }
 }
-
-// Function to update icon in toggle button
 
 function updateToggleIcon(theme) {
     if (!themeToggleBtn) return;
@@ -68,31 +61,25 @@ function updateToggleIcon(theme) {
     }
 }
 
-
-// Apply theme on load
 const currentTheme = getCurrentTheme();
 applyTheme(currentTheme);
 
-// Attach event listener to theme toggle button
 if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
         const activeTheme = rootElement.classList.contains('light-mode') ? 'light' : 'dark';
         const nextTheme = activeTheme === 'light' ? 'dark' : 'light';
 
-        // Save user override
         localStorage.setItem('theme', nextTheme);
         applyTheme(nextTheme);
     });
 }
 
-// Listen to system theme changes dynamically (only if user hasn't set a manual preference)
 window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
         applyTheme(e.matches ? 'light' : 'dark');
     }
 });
 
-// --- Dyslexia Easter Egg ---
 const easterEggTrigger = document.getElementById('easter-egg-trigger');
 if (easterEggTrigger) {
     let textNodes = [];
@@ -114,7 +101,6 @@ if (easterEggTrigger) {
 
     easterEggTrigger.addEventListener('click', () => {
         if (window.dyslexiaInterval) {
-            // Stop the effect and restore original text
             clearInterval(window.dyslexiaInterval);
             window.dyslexiaInterval = null;
 
@@ -124,7 +110,6 @@ if (easterEggTrigger) {
             return;
         }
 
-        // Initialize text nodes if not already done
         if (textNodes.length === 0) {
             getTextNodes(document.body);
         }
@@ -151,7 +136,6 @@ if (easterEggTrigger) {
     });
 }
 
-// --- Jorge Easter Egg ---
 const jorgeEasterEggTrigger = document.getElementById('jorge-easter-egg');
 const jorgeCloud = document.getElementById('jorge-cloud');
 if (jorgeEasterEggTrigger && jorgeCloud) {
@@ -160,12 +144,11 @@ if (jorgeEasterEggTrigger && jorgeCloud) {
     });
 }
 
-// --- Gonzalo Easter Egg ---
 const gonzaloEasterEggTrigger = document.getElementById('gonzalo-easter-egg');
 const gonzaloCloud = document.getElementById('gonzalo-cloud');
 if (gonzaloEasterEggTrigger && gonzaloCloud) {
     gonzaloEasterEggTrigger.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent navigating if wrapped in a link
+        e.preventDefault();
         gonzaloCloud.classList.toggle('visible');
     });
 }
