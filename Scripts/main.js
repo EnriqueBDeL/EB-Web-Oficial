@@ -152,3 +152,10 @@ if (gonzaloEasterEggTrigger && gonzaloCloud) {
         gonzaloCloud.classList.toggle('visible');
     });
 }
+
+document.querySelectorAll('.post-it img').forEach(img => {
+    img.addEventListener('error', () => {
+        img.style.display = 'none';
+    });
+});
+

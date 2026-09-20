@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     
     --color-bg-dark: #0a0a0c;
     --color-bg-card: rgba(20, 25, 35, 0.6);
@@ -1441,3 +1441,104 @@ body.chalkboard {
     opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);
 }
+
+.easter-egg-wrapper {
+    position: relative;
+}
+
+.gonzalo-cloud {
+    width: 380px;
+    text-transform: none;
+    text-align: left;
+    padding: 1rem;
+    cursor: default;
+}
+
+.gonzalo-cloud img {
+    width: 80px;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: contain;
+}
+
+.timeline-cta-btn {
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.footer-container .social-links {
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.subjects-table th:first-child {
+    width: 20%;
+}
+
+.chalk-heading-section {
+    font-size: 2.2rem;
+    border-bottom: none;
+    margin-top: 5rem;
+}
+
+.chalk-heading-section.mt-3 {
+    margin-top: 3rem;
+}
+
+.gdg-bio-section {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.gdg-bio-text {
+    font-size: 1.15rem;
+    color: var(--color-text-main);
+    line-height: 1.8;
+}
+
+.gdg-bio-text.mb-15 {
+    margin-bottom: 1.5rem;
+}
+
+.gdg-workshops-section {
+    max-width: 800px;
+    margin: 0 auto 5rem;
+}
+
+.gdg-workshops-grid {
+    margin-top: 2.5rem;
+}
+
+.gdg-workshop-card {
+    padding: 1.5rem;
+}
+
+.gdg-workshop-card .project-icon {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.gdg-workshop-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.gdg-workshop-card p {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.gdg-workshop-card .project-link {
+    margin-top: auto;
+    font-size: 0.85rem;
+}
+
+.gdg-events-grid {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+}
+
